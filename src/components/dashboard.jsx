@@ -77,9 +77,8 @@ function Dashboard() {
         ))}
       </div>
 
-      {/* PT Meeting Section */}
       <div>
-        <h2 className="h4 mb-3">PT Meetings</h2>
+        <h2 className="h4 mb-3">Teacher Applications</h2>
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
           <div className="dropdown mb-2 mb-md-0">
             <button
@@ -108,15 +107,15 @@ function Dashboard() {
             <thead className="bg-primary text-white">
               <tr>
                 <th>S.No.</th>
-                <th>Class Id</th>
-                <th>Course Title</th>
                 <th>Teacher Name</th>
-                <th>Parent Name</th>
-                <th>Child Name</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Description</th>
-                <th>Accepted By</th>
+                <th>Teacher ID</th>
+                <th>Qualification</th>
+                <th>Subject</th>
+                <th>Grade</th>
+                <th>Board</th>
+                <th>Test 1 Marks</th>
+                <th>Test 2 Marks</th>
+                <th>CV</th>
               </tr>
             </thead>
             <tbody>
@@ -138,6 +137,182 @@ function Dashboard() {
                       {meeting.status}
                     </span>
                   </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="h4 mb-3">Intern Applications</h2>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
+          <div className="dropdown mb-2 mb-md-0">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="filtersDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Filters
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="filtersDropdown">
+              <li><a className="dropdown-item" href="#">All</a></li>
+              <li><a className="dropdown-item" href="#">Accepted</a></li>
+              <li><a className="dropdown-item" href="#">Not Accepted</a></li>
+            </ul>
+          </div>
+          <input
+            type="search"
+            className="form-control w-100 w-md-25"
+            placeholder="Search..."
+          />
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Qualification</th>
+                <th>Role</th>
+                <th>CV</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ptMeetings.map((meeting) => (
+                <tr key={meeting.sNo}>
+                  <td>{meeting.sNo}</td>
+                  <td>{meeting.classId}</td>
+                  <td>{meeting.courseTitle}</td>
+                  <td>{meeting.teacherName}</td>
+                  <td>{meeting.parentName}</td>
+                  
+                  <td>
+                    <span
+                      className={`badge bg-${meeting.status === 'Accepted' ? 'success' : 'danger'}`}
+                    >
+                      {meeting.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="h4 mb-3">Employee Attendance</h2>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
+          <div className="dropdown mb-2 mb-md-0">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="filtersDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Filters
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="filtersDropdown">
+              <li><a className="dropdown-item" href="#">All</a></li>
+              <li><a className="dropdown-item" href="#">Accepted</a></li>
+              <li><a className="dropdown-item" href="#">Not Accepted</a></li>
+            </ul>
+          </div>
+          <input
+            type="search"
+            className="form-control w-100 w-md-25"
+            placeholder="Search..."
+          />
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th>S.No.</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Role</th>
+                <th>No. of Full days</th>
+                <th>No. of Half days</th>
+                <th>No. of Leaves</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ptMeetings.map((meeting) => (
+                <tr key={meeting.sNo}>
+                  <td>{meeting.sNo}</td>
+                  <td>{meeting.classId}</td>
+                  <td>{meeting.courseTitle}</td>
+                  <td>{meeting.teacherName}</td>
+                  <td>{meeting.parentName}</td>
+                  <td>{meeting.childName}</td>
+                  <td>{meeting.childName}</td>
+
+                 
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="h4 mb-3">Teacher Complaints</h2>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
+          <div className="dropdown mb-2 mb-md-0">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="filtersDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Filters
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="filtersDropdown">
+              <li><a className="dropdown-item" href="#">All</a></li>
+              <li><a className="dropdown-item" href="#">Accepted</a></li>
+              <li><a className="dropdown-item" href="#">Not Accepted</a></li>
+            </ul>
+          </div>
+          <input
+            type="search"
+            className="form-control w-100 w-md-25"
+            placeholder="Search..."
+          />
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th>S.No.</th>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Parent ID</th>
+                <th>Parent Name</th>
+                <th>Child ID</th>
+                <th>Child Name</th>
+                <th>Complaint TItle</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ptMeetings.map((meeting) => (
+                <tr key={meeting.sNo}>
+                  <td>{meeting.sNo}</td>
+                  <td>{meeting.classId}</td>
+                  <td>{meeting.courseTitle}</td>
+                  <td>{meeting.teacherName}</td>
+                  <td>{meeting.parentName}</td>
+                  <td>{meeting.childName}</td>
+                  <td>{meeting.date}</td>
+                  <td>{meeting.time}</td>
+                  <td>{meeting.description}</td>
                 </tr>
               ))}
             </tbody>

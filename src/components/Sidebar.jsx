@@ -38,7 +38,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
     >
       {/* Sidebar Header with Burger Icon */}
       <div className="d-flex align-items-center justify-content-between p-3 border-bottom bg-light">
-        <span className={`fw-bold ${isOpen ? '' : 'd-none'}`}>Operation Dashboard</span>
+        <span className={`fw-bold ${isOpen ? '' : 'd-none'}`}>HR Dashboard</span>
         <IconButton
           onClick={toggleSidebar}
           size="small"
