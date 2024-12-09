@@ -163,7 +163,6 @@ function Dashboard() {
       {/* Header Section */}
       <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
         <h1 className="h3 mb-2 mb-md-0">Dashboard</h1>
-        <button className="btn btn-primary">Manual Lead</button>
       </div>
 
       {/* Metrics Section */}
